@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import sliderStyles from "../styles/scss/Slider.module.css";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
 export default function Slider({ sliderPics }) {
   const imgRef = useRef(null);
   const [width, setWidth] = useState("");
   const [index, setIndex] = useState(0);
+  const length = sliderPics.length - 1;
 
-  const handleClick = (action) => {
-    const length = sliderPics.length - 1;
+  const slide = (action) => {
     if (action === "increment") {
       index >= length ? setIndex(0) : setIndex(index + 1);
     } else if (action === "decrement") {
@@ -54,7 +56,7 @@ export default function Slider({ sliderPics }) {
       </div>
       <div className={`container ${sliderStyles.buttons_container}`}>
         <button
-          onClick={() => handleClick("decrement")}
+          onClick={() => slide("decrement")}
           className={`btn ${sliderStyles.arrow_left} bg-dark mx-3 mx-md-0`}
         >
           <svg
@@ -69,7 +71,7 @@ export default function Slider({ sliderPics }) {
           </svg>
         </button>
         <button
-          onClick={() => handleClick("increment")}
+          onClick={() => slide("increment")}
           className={`btn ${sliderStyles.arrow_right} bg-dark mx-3 mx-md-0`}
         >
           <svg
