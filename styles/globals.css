@@ -20,6 +20,11 @@ button:focus {
 html {
   background-color: rgb(108, 117, 125);
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .success_checkmark {
   width: 80px;
   height: 115px;

@@ -16,9 +16,6 @@ export default function Form({
   const { cartItems } = useContext(ctx);
 
   const form = useRef();
-  const nameRef = useRef();
-  const phoneRef = useRef();
-  const addressRef = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
     if (fullName !== "" && phone !== "" && address !== "") {
@@ -37,14 +34,14 @@ export default function Form({
   };
 
   const handleChange = (e) => {
-    const { value, title } = e.target;
-    if (title === "fullName") {
+    const { value, name } = e.target;
+    if (name === "name") {
       setFullName(value);
-    } else if (title === "Phone") {
+    } else if (name === "phone") {
       setPhone(value);
-    } else if (title === "note") {
+    } else if (name === "note") {
       setNote(value);
-    } else if (title === "Address") {
+    } else if (name === "address") {
       setAddress(value);
     }
   };
@@ -102,11 +99,9 @@ export default function Form({
             placeholder="Full name..."
             required
             autoComplete="off"
-            title="fullName"
             value={fullName}
             onChange={handleChange}
             id="name"
-            ref={nameRef}
           />
           <label htmlFor="name">Full name...</label>
         </div>
@@ -118,11 +113,10 @@ export default function Form({
             placeholder="Phone..."
             required
             autoComplete="off"
-            title="Phone"
             value={phone}
             onChange={handleChange}
+            onInput={handleChange}
             id="phone"
-            ref={phoneRef}
           />
           <label htmlFor="phone">Phone...</label>
         </div>
@@ -134,11 +128,9 @@ export default function Form({
             placeholder="Address..."
             required
             autoComplete="off"
-            title="Address"
             value={address}
             onChange={handleChange}
             id="address"
-            ref={addressRef}
           />
           <label htmlFor="address">Address...</label>
         </div>
@@ -150,7 +142,6 @@ export default function Form({
             placeholder="note..."
             maxLength="240"
             style={{ resize: "none", height: "300px" }}
-            title="note"
             value={note}
             onChange={handleChange}
             id="note"

@@ -10,7 +10,7 @@ export default function index({ products }) {
   );
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
   const url = `https://fakestoreapi.com/products/category/${context.params.category}`;
   const res = await fetch(url);
   const products = await res.json();
@@ -18,5 +18,18 @@ export const getServerSideProps = async (context) => {
     props: {
       products,
     },
+  };
+};
+export const getStaticPaths = async () => {
+  const url = "https://fakestoreapi.com/products/categories";
+  const res = await fetch(url);
+  const categories = await res.json();
+  const paths = categories.map((category) => ({
+    params: { category: category.toString() },
+  }));
+
+  return {
+    paths,
+    fallback: false,
   };
 };
