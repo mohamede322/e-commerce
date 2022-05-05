@@ -1,0 +1,9 @@
+.card {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=Card.module.css.map */

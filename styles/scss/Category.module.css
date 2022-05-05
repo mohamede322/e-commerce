@@ -1,0 +1,13 @@
+.category_img {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.category_img:hover {
+  -webkit-filter: brightness(80%);
+          filter: brightness(80%);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=Category.module.css.map */

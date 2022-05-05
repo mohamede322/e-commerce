@@ -1,0 +1,13 @@
+.home {
+  min-height: calc(100vh - 62px);
+  display: flex;
+  flex-direction: column;
+  > div {
+    flex: 1;
+  }
+}
+@media (max-width: 992px) {
+  .home {
+    min-height: calc(100vh - 56px);
+  }
+}

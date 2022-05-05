@@ -1,0 +1,45 @@
+.form_container {
+  width: 100vw;
+  height: calc(100vh);
+  background-color: rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form_container * {
+  z-index: 100;
+}
+
+.form_container .form {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
+}
+
+.form_container .form > * {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+  .form_container .form {
+    width: 75% !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .form_container .form {
+    width: 100% !important;
+  }
+  .form_container .form > * {
+    width: 75% !important;
+  }
+}
+/*# sourceMappingURL=Form.module.css.map */
