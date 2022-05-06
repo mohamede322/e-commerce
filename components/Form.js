@@ -84,7 +84,7 @@ export default function Form({
             <input
               type="text"
               name="product"
-              value={`Item: ${item.title} || Quantity: ${item.quantity} || Price: ${item.total}`}
+              value={`Item: ${item.title} - Quantity: ${item.quantity} - Price: ${item.total} || `}
               className="d-none"
               readOnly
             />
